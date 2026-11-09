@@ -45,3 +45,6 @@ ruff check .
 ## Licencia
 
 MIT. Consulte el archivo LICENSE.
+
+## Aplicacion Publicada 
+"https://plataforma-ludica-akfk.onrender.com"
