@@ -1,46 +1,42 @@
+
 # AGENTS.md
 
-Contexto del proyecto para los agentes de IA. Léalo antes de cualquier cambio.
+Instrucciones para agentes OpenCode en este repositorio. Léalo antes de cambiar código.
 
 ## Proyecto
+Plataforma web lúdica de cursos para niños con FastAPI. Roles: docente y niño; el niño entra con código de clase y avatar, sin correo. Los datos del proyecto viven en `app/proyecto.py`.
+Plataforma web lúdica de cursos para niños. Curso: Ciencias. Mecánica: Estrellas. Roles: docente y niño. El niño entra con código de clase y avatar, sin correo.
 
-Plataforma web lúdica de cursos para niños. Curso: (complete). Mecánica: (complete).
-Roles: docente y niño. El niño entra con código de clase y avatar, sin correo.
-
-## Stack
-
-- Python 3.11 o superior, FastAPI, plantillas Jinja2
-- SQLModel con SQLite en desarrollo y PostgreSQL al publicar
-- pytest con TestClient, Ruff
-- GitHub Actions para el CI y Render para el despliegue
+## Stack y estructura
+- Python >=3.11, FastAPI, Jinja2 y SQLModel.
+- SQLite en desarrollo y PostgreSQL al publicar.
+- Entrada principal: `app/main.py`.
+- Rutas HTML: `app/rutas/paginas.py`; API: `app/rutas/api.py`.
+- Reglas de negocio: `app/servicios/`; modelos: `app/modelos/`.
+- Plantillas y archivos estáticos: `app/templates/` y `app/static/`.
+- Pruebas: `tests/`; aceptación: `tests/aceptacion/`.
 
 ## Comandos
+- Instalar: `python -m pip install -r requirements-dev.txt`.
+- Ejecutar: `uvicorn app.main:app --reload`.
+- Pruebas: `python -m pytest -v`.
+- Estilo: `ruff check .`.
+- PDF: `python entregar.py N`.
+- Salud: abrir `http://127.0.0.1:8000/salud`.
 
-- Instalar: `pip install -r requirements-dev.txt`
-- Ejecutar: `uvicorn app.main:app --reload`
-- Pruebas: `pytest -v`
-- Estilo: `ruff check .`
-
-## Estructura
-
-- `app/rutas/`: reciben la petición y llaman a los servicios; sin regla de negocio
-- `app/servicios/`: regla de negocio, con pruebas propias
-- `app/modelos/`: tablas de SQLModel
-- `app/templates/` y `app/static/`: interfaz y PWA
-- `tests/`: pruebas; `tests/aceptacion/`: criterios de la especificación
-
-## Convenciones
-
-- Nombres en español, claros y completos.
-- Cambios pequeños, una tarea por rama y prueba antes del código.
+## Reglas de trabajo
+- Escriba en español y use nombres claros.
+- Haga cambios pequeños y pruebe antes de entregar.
+- Lea `STATE.md` al iniciar y actualícelo al cerrar la sesión.
 
 ## Qué no hacer
-
-- No escribir claves ni contraseñas en el código: se leen de variables de entorno.
-- No instalar dependencias sin verificar que existen en pypi.org.
-- No modificar ni borrar pruebas para que pasen.
-- No usar datos personales reales.
-
+- No escriba claves ni contraseñas en el código; use variables de entorno.
+- No instale dependencias sin verificar que existen en PyPI.
+- No modifique ni borre pruebas para que pasen.
+- No use datos personales reales en pruebas ni ejemplos.
+- No suba archivos `.env` ni contraseñas al repositorio.
+- No hacer commit ni push: los hace el desarrollador.
 ## Lecciones aprendidas
-
-Cada vez que el agente se equivoque, escriba aquí la regla que evita repetir el error.
+Registre aquí cada error importante y la regla para evitar repetirlo.
+## Convenciones
+- Al iniciar cada sesión, leer STATE.md.
