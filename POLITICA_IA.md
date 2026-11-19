@@ -16,3 +16,8 @@ Me comprometo a cumplir las siguientes reglas durante el desarrollo de este proy
 **Nombre:** (complete)
 
 **Fecha:** (complete)
+## Aceptación
+Leí esta política y la acepto. Respondo por todo lo que entrego, lo haya escrito o no
+la IA.
+- Nombre: [nombre y apellido]
+- Fecha: [AAAA-MM-DD]
